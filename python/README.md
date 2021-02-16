@@ -1,4 +1,4 @@
-# Python Wrapper for Datasketches
+# Python Wrapper for Apache DataSketches
 
 ## Installation
 
@@ -39,13 +39,16 @@ tox
 
 ## Usage
 
-Having installed the library, loading the Datasketches library in Python is simple: `import datasketches`.
+Having installed the library, loading the Apache Datasketches library in Python is simple: `import datasketches`.
 
 ## Available Sketch Classes
 
-- KLL
+- KLL (Absolute Error Quantiles)
     - `kll_ints_sketch`
     - `kll_floats_sketch`
+- REQ (Relative Error Quantiles)
+    - `req_ints_sketch`
+    - `req_floats_sketch`
 - Frequent Items
     - `frequent_strings_sketch`
     - Error types are `frequent_items_error_type.{NO_FALSE_NEGATIVES | NO_FALSE_POSITIVES}`

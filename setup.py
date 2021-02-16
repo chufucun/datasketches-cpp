@@ -49,6 +49,8 @@ class CMakeBuild(build_ext):
             os.path.dirname(self.get_ext_fullpath(ext.name)))
         cmake_args =  ['-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + extdir]
         cmake_args += ['-DWITH_PYTHON=True']
+        # ensure we use a consistent python version
+        cmake_args += ['-DPYTHON_EXECUTABLE=' + sys.executable]
         cfg = 'Debug' if self.debug else 'Release'
         build_args = ['--config', cfg]
 
@@ -77,10 +79,10 @@ class CMakeBuild(build_ext):
 
 setup(
     name='datasketches',
-    version='2.2.0-SNAPSHOT',
-    author='Datasketches Developers',
+    version='2.2.0.dev0',
+    author='Apache DataSketches Developers',
     author_email='dev@datasketches.apache.org',
-    description='A wrapper for the C++ Datasketches library',
+    description='A wrapper for the C++ Apache DataSketches library',
     license='Apache License 2.0',
     url='http://datasketches.apache.org',
     long_description=open('python/README.md').read(),
