@@ -29,7 +29,7 @@ target_include_directories(theta
     $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/include>
 )
 
-target_link_libraries(theta INTERFACE common)
+target_link_libraries(theta INTERFACE common cpc)
 target_compile_features(theta INTERFACE cxx_std_11)
 
 set(theta_HEADERS "")
